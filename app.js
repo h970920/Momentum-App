@@ -23,4 +23,5 @@ if (savedUsername === null) {
   loginForm.addEventListener("submit", onLoginSubmit);
 } else {
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  greeting.innerText = 
 }
