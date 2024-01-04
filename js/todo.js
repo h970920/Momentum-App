@@ -10,7 +10,7 @@ function deleteToDo(event) {
 const toDos = [];
 
 function saveTodos() {
-  localStorage.setItem("toDos", toDos);
+  localStorage.setItem("toDos", JSON.stringify(toDos));
 }
 
 function paintToDo(newTodo) {
