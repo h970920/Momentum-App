@@ -7,6 +7,12 @@ function deleteToDo(event) {
   li.remove();
 }
 
+const toDos = [];
+
+function saveTodos() {
+  localStorage.setItem("toDos", toDos);
+}
+
 function paintToDo(newTodo) {
   const li = document.createElement("li");
   const span = document.createElement("span");
@@ -23,7 +29,9 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
   toDoInput.value = "";
+  toDos.push(newTodo);
   paintToDo(newTodo);
+  saveTodos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
